@@ -1,6 +1,6 @@
 language: generic
 before_deploy:
-  script: push.sh
+  script: ./push.sh
 deploy:
   provider: cloudfoundry
   api: https://api.cloud.service.gov.uk
