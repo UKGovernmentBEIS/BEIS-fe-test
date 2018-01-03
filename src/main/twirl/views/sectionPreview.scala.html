@@ -1,0 +1,44 @@
+@(
+        app: ApplicationSectionDetail,
+        fields: Seq[forms.Field],
+        answers: play.api.libs.json.JsObject,
+        closeButton: String,
+        editButton: Option[String]
+)(implicit sessionUser: String)
+
+@import helpers._
+
+@main(s"${app.formSection.title} - BEIS", backLink=Some(BackLink("Return to application overview",controllers.routes.ApplicationController.show(app.id, None).url)), displayUserName=Some(sessionUser)) {
+    <div class="grid-row">
+        <div class="column-full">
+            <h1 class="heading-xlarge">
+                <span class="heading-secondary">@formatId(app.opportunity.id.id): @app.opportunity.title</span>
+                @app.formSection.title
+            </h1>
+
+            @fields.map(_.renderPreview(app.formSection.questionMap, answers))
+
+            @if(editButton.isDefined){
+                @app.section.flatMap(_.completedAtText)
+
+                <div class="rifs-form-buttons">
+
+                    <form method="POST"
+                        action=@editButton
+                        novalidate="novalidate">
+                        <p><a class="button secondary" href=@closeButton>Close</a>
+                        <input type="submit" class="button--link-style bottom--link-style" value="Edit this page"/>
+                        </p>
+                    </form>
+                </div>
+            }
+
+            @if(editButton.isEmpty){
+                <div class="rifs-form-buttons">
+                    <a class="button secondary" href="@closeButton">Close</a>
+                </div>
+            }
+
+        </div>
+    </div>
+}

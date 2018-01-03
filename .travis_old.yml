@@ -1,0 +1,11 @@
+deploy:
+  provider: cloudfoundry
+  api: https://api.cloud.service.gov.uk
+  username: salim.ullah@beis.gov.uk
+  password:
+    secure: HIanmotiSe+cV2nvgDnlT/gX7WZSdbclmBdibhlJgo9iqCuQIB8OPFNrXMZw8IsV80/Kp95VjImDItf1pgsszOkbk/1KOcrNbzI3anoiu1+R44Y3+iTVRdbOpIyUuxYsYWzRkHk5CSg2qq4/VbXVrM3cYeSKdyI//YaHHeWcpCyAm/htY+962wpeTTykSMU0s7u13zDC53KnBwWs5h3Zj1iyuMygh/FxG9SSUJKjMhTuocxBiHg3D8AaEKuIPBX1tb+JjZT8G3uLQZYNgw0F3Asw5cs2NF4WPQk2odXib+j81SuRoF1iF1vYJFaiwIIkLiSSiRaexqaLVZCtXxrj7GFeyiz2mbQNpyGtXCR4VE67ySqAsHj4ERfRexIMyztLzOi8k80m9qYx7VI80zKYkWG8XgBwxSc+W3x68XQVIUHMYIJhnFGIQHAoJdzV/BPM19GJsmid04rpzfsA3VSpoP8NwNxyQem6Kgd3MPRgDBwnJJ4HXB9eOTc6m2IRvFtot3L2dkgZA8F55FZVTEWfneCxpBJryPid5NwbcEwz3m+2vE946X0ECZdBB8Krs2dJe6UPfnc3ZxNYX8IKwLlg0CAyCFuHvIuHzeAVu4MsWPM/QoySs9zPttyBe+n74UhUd+unGZLTUX2jgEJ2CwKPdAHLUGlgTPNP6JXTy8SSQUA=
+  organization: beis-digital-test
+  space: testci
+  on:
+    repo: UKGovernmentBEIS/beis-fe-test
+    

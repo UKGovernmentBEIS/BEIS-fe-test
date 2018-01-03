@@ -1,0 +1,58 @@
+@(
+errors : String,
+loginform: Option[Form[LoginForm]] = None,
+isRegnSuccess: Option[Boolean] = None
+)
+
+@errorClass = @{
+if(errors.nonEmpty) "error" else ""
+}
+@import helper._
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+
+@main(s"Department for Business, Energy & Industrial Strategy - BEIS") {
+    @helper.form(action = routes.UserController.loginFormSubmit) {
+
+@if(isRegnSuccess.getOrElse(false)){
+<div class="registration-confirmation" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+    <p class="heading-medium"> You have successfully registered </p>
+    <p class="heading-small"> Please login to start your application</p>
+</div>
+}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <div class='form-group @errorClass'>
+
+            <h1 class="heading-xlarge"> User Login </h1>
+
+            <p class="lede">
+                    Please enter your Username and Password
+            </p>
+            <span class="error-message" role="alert">@errors</span>
+
+            <table>
+                   <tr>
+                       <td width="10%"> Username </td>
+                       <td width="80%"> <input type="text" id="name" class="form-control login-text-field " title="name" name="name"  aria-label="Username" aria-invalid="false"> </td>
+                   </tr>
+                   <tr>
+                       <td> Password </td>
+                       <td> <input type="password" id="password" class="form-control login-text-field " title="password" name="password"  aria-label="password " aria-invalid="false"> </td>
+                   </tr>
+                   <tr>
+                       <td><div class="rifs-form-buttons">
+                           <input type="submit" name="@Save.name" class="button button--start" value="Login">
+                       </div>
+                       </td>
+                       <td>New User <a href="/register">Register</a>,
+                            <a href="/forgotpassword">Forgot password</a>
+                       </td>
+                   </tr>
+               </table>
+        </div>
+    </div>
+</div>
+    }
+}

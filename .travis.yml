@@ -1,0 +1,13 @@
+language: generic
+before_deploy:
+  script: push.sh
+deploy:
+  provider: cloudfoundry
+  api: https://api.cloud.service.gov.uk
+  username: salim.ullah@beis.gov.uk
+  organization: beis-digital-test
+  space: testci
+  on:
+    repo: UKGovernmentBEIS/beis-fe-test
+  password:
+    secure: NZZCR+HT8GkNSZaWNccXJguvYMvpKyoEMFHoqsX6gLiEvHsqR3R0s464yBRI4T2h4AqEuOxN+p8R42p95Joa2k6dS2E1QS+ybXdQe83370nzR7Q0PoEuxBaXvwuJkRbwHjbQDHNWSSw+DdwQeAqUEaWcmo+Jh1poEyX3A8Is3MycO+RtVAAxlyzpwXFy40IGsUJ6VHHxkaIccsEphklRGfwy2zYeGF5BFSZRNBG1loXOj5xqBc7YlTv7uY6q7+x3GsX79fJV4vdBZa5keDrAA1L+OOpiTWfE/oTQ2jN9rL02EEFMfFd6azIs2VVmiaWX6zXR4Hwy+j+se2fy9/RPNeQlER+VhLaQQW4n3Vp+4g8GhkIH+2I206TuZlJ7O2ucxlwVslZ1XoJEMgMV5ldopIrt42O/5oPT3rfoDhfLYRZRMh3GMR6VH1aBm0NrON1kXmhfVaDgAopPvEnQwEDbYS/171kFvtKPmT69sOeOjKOWReSs5y1A36hARqm/e4UAlzm8iHJ+UgfAcFsGZLof+qTGa5xfefDvRqcuw0zzkLiyxE8x34nieyTtO7tmU0yiJdzKpBBtRHMrKltqnb1zmVZ0rTLThLOJpYWOSzvTL5DMMSNZcGBMBxpgg4GE3ocdmvUCCFlAHNxjCRanWejVQg5fU3p/VufF4boMwaN3Vgw=

@@ -1,0 +1,244 @@
+// Form elements
+.form-group {
+  margin-bottom: 2.5em;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+    margin-bottom: .5em;
+}
+
+details {
+  margin-bottom: 1.5em;
+}
+
+input.text-field,
+textarea.form-control {
+  display: block;
+  padding: 6px;
+  width: 100%;
+}
+
+input.fileupload-text-field,
+textarea.form-control {
+  padding: 6px;
+  width: 50%;
+}
+
+
+input.dynamictd-text-field,
+textarea.form-control {
+  padding: 6px;
+  width: 50%;
+}
+
+input.address-text-field,
+textarea.form-control {
+  padding: 6px;
+  width: 80%;
+}
+
+input.contact-text-field,
+textarea.form-control {
+  padding: 6px;
+  width: 80%;
+}
+
+
+input.login-text-field,
+textarea.form-control {
+  padding: 6px;
+  width: 80%;
+}
+
+textarea.form-control-simpleform {
+  height: 10em;
+  padding: 6px;
+  width: 100%;
+}
+
+textarea.form-control.generic {
+  padding: 6px;
+  height: 10em;
+  width: 100%;
+}
+
+
+textarea.form-control {
+  height: 10em;
+}
+
+input.text-field.number {
+  text-align: center;
+  width: 3em;
+}
+
+input.text-field.bignumber {
+  text-align: center;
+  width: 9em;
+}
+
+input.text-field.currency {
+  text-align: right;
+  width: 9em;
+}
+
+input.text-field.simpleformcurrency {
+  text-align: left;
+  width: 3em;
+}
+
+.hint-text {
+  margin-top: .5em;
+}
+
+.date-selector {
+  @extend %contain-floats;
+  margin-bottom: .5em;
+
+  input {
+    display: block;
+    padding: 6px;
+    text-align: center;
+    width: 3em;
+  }
+}
+
+.form-control.year {
+  width: 4em;
+}
+
+.date-selector>div {
+  float: left;
+  margin-right: 1.5em;
+}
+
+.question {
+  margin: 0 0 1.5em;
+}
+
+.textarea-resize {
+  overflow: auto;
+  resize: vertical;
+}
+
+.column-half.form-spacing {
+  padding-bottom: 2em;
+  padding-left: 0;
+}
+
+.column-full.form-spacing {
+  padding-left: 0;
+}
+
+// We want this aligned right on larger screens, but on collapsed screens
+// when the sidebar moves to be underneath the first column (main content)
+// we want it to move to be left-aligned.
+@media(min-width: 641px) {
+  .pull-right-lg-only {
+    float: right;
+  }
+}
+
+@media(max-width: 640px) {
+  .pull-right-lg-only {
+    float: none;
+  }
+}
+
+
+// .input-icon: used to display a £ inside an input box
+.input-icon {
+  position: relative;
+}
+
+.input-icon > i {
+  display: block;
+  font-style: normal;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: 8px;
+  width: 25px;
+}
+
+.input-icon > input {
+  padding-left: 25px;
+  padding-right: 6px;
+}
+
+
+.expand-section {
+    width: 100%;
+    float: left;
+    height: 15px;
+    padding-top: 1.5em;
+}
+
+.expand-section1 {
+    width: 100%;
+    float: left;
+    padding-top: 1.5em;
+        margin-bottom: em(1);
+
+}
+
+.container {
+    width: 100%;
+    height: 20px;
+    margin: auto;
+}
+
+.helptext-first{
+    width: 75%;
+    float: left;
+    margin-left: 10px;
+}
+
+.helptext-selected{
+    background-color:#FFBF47;
+}
+
+.helptext-second{
+    padding-left: 76%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.helptext-border{
+     border-bottom: 2px solid #bfc1c3;
+ }
+
+
+ fieldset:after,.form-section:after,.form-group:after,.form-block:after,.notice:after,.clearfix:after,.metadata:after,.search:after,.js-accordion-with-descriptions .subsection-controls:after,.js-accordion-with-descriptions .subsection-wrapper:after{
+ content:"";display:block;clear:both
+ }
+ .full-width .full-page-width-wrapper,.hero__content{
+ max-width:960px;margin:0 15px
+ }
+ @media (min-width: 641px){
+ .full-width .full-page-width-wrapper,.hero__content{
+ margin:0 30px
+ }}
+
+ @media (min-width: 1020px){
+ .full-width .full-page-width-wrapper,.hero__content{
+ margin:0 auto
+ }}
+ fieldset:after,.form-section:after,.form-group:after,.form-block:after,.notice:after,.clearfix:after,.metadata:after,.search:after,.js-accordion-with-descriptions .subsection-controls:after,.js-accordion-with-descriptions .subsection-wrapper:after{content:"";display:block;clear:both}
+ fieldset:after,.form-section:after,.form-group:after,.form-block:after,.notice:after,.clearfix:after,.metadata:after,.search:after,.js-accordion-with-descriptions .subsection-controls:after,.js-accordion-with-descriptions .subsection-wrapper:after{content:"";display:block;clear:both}
+ .button{background-color:#00823b;position:relative;display:-moz-inline-stack;display:inline-block;padding:.526315em .789473em .263157em;border:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;outline:1px solid transparent;outline-offset:-1px;-webkit-appearance:none;-webkit-box-shadow:0 2px 0 #003618;-moz-box-shadow:0 2px 0 #003618;box-shadow:0 2px 0 #003618;font-size:1em;line-height:1.25;text-decoration:none;-webkit-font-smoothing:antialiased;cursor:pointer;color:#fff;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;vertical-align:top}
+ .button:visited{background-color:#00823b}
+ .button:hover,.button:focus{background-color:#00692f}
+ .button:active{
+ top:2px;-webkit-box-shadow:0 0 0 #00823b;-moz-box-shadow:0 0 0 #00823b;box-shadow:0 0 0 #00823b
+ }
+ .button.disabled,.button[disabled="disabled"],.button[disabled]{zoom:1;filter:alpha(opacity=50);opacity:0.5
+ }
+
+ .wordwrap {
+   table-layout:fixed;
+   word-wrap:break-word;
+   border-collapse:collapse;
+ }
