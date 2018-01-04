@@ -1,0 +1,9 @@
+{
+  "version" : 3,
+  "sourceRoot" : "/assets/",
+  "file" : "application-print.css",
+  "sources" : [ "stylesheets/application-print.scss" ],
+  "sourcesContent" : [ "#global-header-status,\n#support-column,\nnav,\n.panel,\n.no-print,\n.button,\n.breadcrumbs\n{\n  display: none;\n}\n\n#content {\n  float: none !important;\n  width: 100%;\n}\n\n.text {\n  max-width: 100%;\n  width: 100%;\n}\n\n.column-two-thirds {\n  width: 95%;\n}\n\n" ],
+  "mappings" : "AAAA,AAAA,qBAAqB,CACrB,AAAA,eAAe,CACf,AAAA,GAAG,CACH,AAAA,MAAM,CACN,AAAA,SAAS,CACT,AAAA,OAAO,CACP,AAAA,YAAY,AACZ,CACE,OAAO,CAAE,IAAK,CACf,AAED,AAAA,QAAQ,AAAC,CACP,KAAK,CAAE,eAAgB,CACvB,KAAK,CAAE,IAAK,CACb,AAED,AAAA,KAAK,AAAC,CACJ,SAAS,CAAE,IAAK,CAChB,KAAK,CAAE,IAAK,CACb,AAED,AAAA,kBAAkB,AAAC,CACjB,KAAK,CAAE,GAAI,CACZ",
+  "names" : [ ]
+}
