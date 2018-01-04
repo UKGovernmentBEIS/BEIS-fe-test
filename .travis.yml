@@ -1,30 +1,24 @@
---- 
-after_deploy: 
-  - "echo \"sbt run..\""
-  - "sbt stage"
-  - "echo \"cf Push ..\""
-  - "cf push ci1 -p ./target/universal/stage -b java_buildpack --health-check-type=none"
-  - "echo \"cf Push complete\""
-deploy: 
+---
+deploy:
   api: "https://api.cloud.service.gov.uk"
   organization: beis-digital-test
-  password: 
+  password:
     secure: NZZCR+HT8GkNSZaWNccXJguvYMvpKyoEMFHoqsX6gLiEvHsqR3R0s464yBRI4T2h4AqEuOxN+p8R42p95Joa2k6dS2E1QS+ybXdQe83370nzR7Q0PoEuxBaXvwuJkRbwHjbQDHNWSSw+DdwQeAqUEaWcmo+Jh1poEyX3A8Is3MycO+RtVAAxlyzpwXFy40IGsUJ6VHHxkaIccsEphklRGfwy2zYeGF5BFSZRNBG1loXOj5xqBc7YlTv7uY6q7+x3GsX79fJV4vdBZa5keDrAA1L+OOpiTWfE/oTQ2jN9rL02EEFMfFd6azIs2VVmiaWX6zXR4Hwy+j+se2fy9/RPNeQlER+VhLaQQW4n3Vp+4g8GhkIH+2I206TuZlJ7O2ucxlwVslZ1XoJEMgMV5ldopIrt42O/5oPT3rfoDhfLYRZRMh3GMR6VH1aBm0NrON1kXmhfVaDgAopPvEnQwEDbYS/171kFvtKPmT69sOeOjKOWReSs5y1A36hARqm/e4UAlzm8iHJ+UgfAcFsGZLof+qTGa5xfefDvRqcuw0zzkLiyxE8x34nieyTtO7tmU0yiJdzKpBBtRHMrKltqnb1zmVZ0rTLThLOJpYWOSzvTL5DMMSNZcGBMBxpgg4GE3ocdmvUCCFlAHNxjCRanWejVQg5fU3p/VufF4boMwaN3Vgw=
   provider: cloudfoundry
   space: testci
-  true: 
+  true:
     repo: UKGovernmentBEIS/beis-fe-test
   username: salim.ullah@beis.gov.uk
-env: 
-  global: 
-    - 
+env:
+  global:
+    -
       secure: ZbEN8bnxFS4lp/ASTHEwFKxINdqSOgcArpehoNNLI2O94+gCl+apDN05rCsYW6FCKXHFPz2XEm7VWH+Ip6081a/P6tbpECZkHonYL9fxIKE6naTt51w+aBLbGXIUkvjSHFbZR6eZ3EUOqGC/J7GbyJj8ZMsE6FyB4OXA3TlahKeY1J/+U1uFCwdosH31ULbAuvQ0wVXMh7FksDstnVRo8LC+Eb76KWwvmmeAGPu4gwrCMmqxCgkz6+FNcE13gjGcUsElP5x5FH/mUgKRlqHWJghjfRI+KoCdaJXwmGInPZEw0pKNslIUF3i57w56airSQ4LJayJVE/Eq4xdAHj6NQIqAwiLvVNolKuACimo+JuDlYWQsLYK/p0+vO5EnX5dRZXD98GYIIui1jEV1DdSgDJqTT8GJCPb5fG/T9Ui4/IinzTbnZawMFp3JxSRhGGJAAbVG+pA/0Bx95+BRo8kWh67Goe4FfO28sdmT27sIf2dTigGU4JVGIrAwesRqHokpW+cnoLGTs8KdpaEnoWMWREI5rUvKXpkGHBToTi6N+0LLBz35IQuPMcMAxMZDplyrziCf9nKUr23CYqRzlnv7FA3n6dJsp9tkfAHx45Y6JR9YprP27gMzz5itAkSrACfMCUiAM01qct6SVYcM8orxK8xF8Im38ItWqGdLUALZdsY=
-    - 
+    -
       secure: iG5IA23qs5VIC2EMKMYIM7o4Ix1gv2OXdKwH2iB41SmPJpLFAVI8fdKZufA40RIAe4BV+0k3ZAj6zK3Xu0oAy1/06PbDgQue1xxQinRf7utXvbSAGDUo5L7Qbia13j3Jduur8hY+BMH8K2PqKWCCnX1XlxGly7UcT0PokuXwJtHZHjae4M4I1kksD3OmdUuRUjCWLDatpIgNxg/5rjtJgvWFrj9jIGYpY1thu30d0nl0MM49j3eqmfZNm4/nUu3171c3e0TXmdFJf40JGt4Ti+bpRHT6vL6N5FPJFKRHRir/YcIqWhEG/XPxjimu4Tgk1MVMBXYnEGhsQL93tZCqybXqs7tJxEfV0xaVedZM+s+e4QuKMzI3rxwr870sWic8564f0/6i5kkzcR+ezhjM2+tw7Ekmxsru3fKUyJ4WT2RXTHcMlYu3fn1UVr9Vo8BQD+C198yZVrU1yx6RDCpwiS5TSh5pB2EaBVIvWGxgV333gq/QUdCEOdZWP+vgw4NWc3oa5sTcPQ8qa4lIu+f5xPYes04lANUh3MRYi5QAdlwAT+oDplHmeraCAf71uWu2gy6JeaeFcWl8hV6Is5BFOCe+gMHVRiyhL9NEO0sIb5TLPJEIvEVRQjTuZcLBWG+qSNAS/3QOgMnVrVQOghty3IqwFOBvhQDxA8TO+jON52U=
-    - 
+    -
       secure: zX21oPQIUHTZuXJ+P0iox2XXPwfHUMDtG+uO4lTy6/5xHSwxBAjKmquk/zKgd8v8ogUIjscOJw8Pe6PyYgAQY6CGiwuqWyAhl5SaAqotywHihSoi2owldz0vj6GYNWcwmrzZV5GIS5uQBHviOLXOXxZcS39jMwXeEnKgMYjyOWhlPTRYno1CykWsQjGd6w64vChc14XUyk+i6kE0QG8T799dpvKMm7UpMJMYRnFXte8hDgrdOcCvrTCWqqprTOsyJIOgjqOcC8OkUToxlfnKd1xyJQIxKcKBTKY7XYq5S2Cvw/4p224QWpkcVVj1B6vrscKDTZ/Rfdf3tPLeXqYQUpiAHCEeAzvxiU1yh0Y0amAtCvWTJMzqWCs2G87sVboYKDvVi+rLnIWsghcfiJtVqLavBzZi3MF8UTI5IVxvXa7JRdXs4JBJsTL63V0k8/AAlX7SModccYsfUbn92+FXEz2fo6DJMurYsT1J7QookVf9oYTnsoDSO2jZpYrvDgbbTKPfu6HYgkjMkNVan+M4AcLlAfBCT14s0oteEQF9qnTmfYu47oQAF4Df4m7/J64umapeFSCdeqXaDZfyNnbhIF2Je79jbOxy4kFoVSKG+Ve+SLHhGGQMmUjdHHEUW/5b7sIYWBkffT+PMk/Iu7+GfI1qXiwo4ZpXQUS/TCLrA2c=
-    - 
+    -
       secure: U+O+9g5MhvdD2BsM/xKqfZkIWQ9nw/7oTZJofRvt1ucLy8SDHmmXCHF5L8MbyWDxZB925rRHxo2rjzDYz1NhjAZ8az0tdEObLABr6MwwP7OWZf1T4hUKFbwVZPzx+pa1RM2+pbS3E/QdahloG+gzP0y8TDMVh12IycUe1rRGnMQFpOdjjbGzTKzL8b42eXhgtuMojQaRlcD6KNibBm4yB+5Y0YBw/1KgFVx68X7L9lIXRdYK+wr+pyoJU+7UyquroF7pfBsmWeXTRi4Jzvi0Le/ai2v75gxfm+C+KOHzo4mh9vMPeDLd/mflOq0cu7F1YqOIcbaIQEqtxqoKpVBMZ8kbyLW/EUn4Yf7ml60Nr2rG2ARbAmivA+Iqt9imViIMnwBJAkSvAqN7tORAvvvnYdoeKsoFPVkoVG8+Qs4S4ea8B6zHBsprLlNt9bFAY9WcY3c96HciIa9N/KrAw5f7EIpYNahH80ctusXyT7BEZyGMBwcEAh9udDq88h2F67wqLsKMTzWjZUumOUtM58umeiG7cTdwsdwLwWXv78BHPMQamD7Ga7WgtMP6tJKnIVGPVRIx5ioliQVXWAIz6qv39eEpg+1YDquNU4b+AGjLYiQ8C/1Jcv8grmM1ym0dQdEr+WbzPzhVkuGmsjkcTbRbM+d7obk6OP0xYy/OMJXXGfE=
-    - 
+    -
       secure: uZLL9mDGbT262Sug9ecRVllxMse1zXD1/iUbFK9Vg3d7MqKongOKZn78RekcIaZ4zv+NHRlaUA1rJ8ZH3xUe1KBSqZSd0p4R+7YhqA2ydYmNqiciD8fHAbApOtMC0CHeBooTw0oXwc2ZskfxcBzjeuZHcSn9yyqwGLIfwyUQaPDPtvn16JaDQAbeAKSQFURPlglBFsjJLkCVHlkbDf/fGTCqlK+FcL6vv45YzUHcuKQ2B9yMjBKARs7ujkDv9/gWoOH13FP0RcTmXRM3WrGTlZDuFa7YUctrqNxaaJqloB7JtRP1HmGXX/G0mxKMxUoFo1Tau3saY4GTjUUuCk6eQQA/bDvklT/V6iP28BUCmWaEiNjHgNabxx/GO0WtiMfMzdsHThQq1z9GYuSivzJF2Y21zed9FBfN9NPE/hZ3usCyzxDmxPGzY4L7xigwPZD0IY52w3KcdIgv6WyHnWbZVJNxzk+TfqENiTqBZs40DDMwERT4Wptc0jHSHXDIoFwTMecz8JTBNPfIT59t++ckP4L2nXf62/S08RVeyqanawt6HlB6ag65MRpUpekFXmySsIGOhcr40b2SSh4DpuimDh+zJN62mGHOjqR6Rkj1MForYXthpdBKn7BDbNUTmDIaeL56HYMXQ2xL0u+lvNqyRECz5mnx9tmgdfXjJOku8SE=
 language: generic

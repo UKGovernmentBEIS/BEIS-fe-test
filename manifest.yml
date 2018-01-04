@@ -2,6 +2,7 @@
 applications:
 - name: ci1
   memory: 64M
+install: ./push.sh
   # buildpack: java_buildpack
  # https://github.com/heroku/heroku-buildpack-scala
  # buildpack: ruby_buildpack
