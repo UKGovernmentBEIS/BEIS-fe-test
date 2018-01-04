@@ -1,7 +1,7 @@
 ---
 applications:
 - name: ci1
-  memory: 1G
+  memory: 64M
   # buildpack: java_buildpack
  # https://github.com/heroku/heroku-buildpack-scala
  # buildpack: ruby_buildpack
